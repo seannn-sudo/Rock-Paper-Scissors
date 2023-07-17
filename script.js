@@ -1,4 +1,8 @@
 let result_h3 = document.getElementById("RESULT");
+let user_score_p = document.getElementById("USER_SCORE");
+let computer_score_p = document.getElementById("COMPUTER_SCORE");
+let user_score = 0;
+let computer_score = 0;
 
 function getComputerChoice(){
     let random_num = Math.floor(Math.random() * 3);
@@ -16,16 +20,40 @@ function playRound(userSelection, computerSelection){
         result_h3.innerHTML = `Computer chose ${computerSelection}. It's a tie!`;
     }
     else if (userSelection === "ROCK"){
-            if (computerSelection === "PAPER") {result_h3.innerHTML = "Computer chose PAPER. You lost!"}
-            else {result_h3.innerHTML = "Computer chose SCISSORS. You won!"}
+            if (computerSelection === "PAPER") {
+                computer_score++;
+                computer_score_p.innerHTML = computer_score;
+                result_h3.innerHTML = "Computer chose PAPER. You lost!"
+            }
+            else {
+                user_score++;
+                user_score_p.innerHTML = user_score;                
+                result_h3.innerHTML = "Computer chose SCISSORS. You won!"
+            }
          }
     else if (userSelection === "PAPER"){
-            if (computerSelection === "SCISSORS") {result_h3.innerHTML = "Computer chose SCISSORS. You lost!"}
-            else {result_h3.innerHTML = "Computer chose ROCK. You won!"}
+            if (computerSelection === "SCISSORS") {
+                computer_score++;
+                computer_score_p.innerHTML = computer_score;                
+                result_h3.innerHTML = "Computer chose SCISSORS. You lost!"
+            }
+            else {
+                user_score++;
+                user_score_p.innerHTML = user_score;                  
+                result_h3.innerHTML = "Computer chose ROCK. You won!"
+            }
          }
     else if (userSelection === "SCISSORS"){
-            if (computerSelection === "ROCK") {result_h3.innerHTML = "Computer chose ROCK. You lost!"}
-            else {result_h3.innerHTML = "Computer chose PAPER. You won!"}
+            if (computerSelection === "ROCK") {
+                computer_score++;
+                computer_score_p.innerHTML = computer_score;                    
+                result_h3.innerHTML = "Computer chose ROCK. You lost!"
+            }
+            else {
+                user_score++;
+                user_score_p.innerHTML = user_score;                   
+                result_h3.innerHTML = "Computer chose PAPER. You won!"
+            }
          }          
 }
 document.getElementById("ROCK").addEventListener("click",function(){playRound("ROCK",getComputerChoice())});

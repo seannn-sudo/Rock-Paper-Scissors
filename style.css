@@ -11,6 +11,15 @@ body {
     align-items: center;
     gap:50px;
 }
+.scoreboard{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.scoreboard_items{
+    flex-basis:200px;
+    border: groove 2px;
+}
 #ROCK, #PAPER, #SCISSORS{
     flex-basis: 200px;
 }
@@ -19,4 +28,7 @@ body {
 }
 #RESULT{
     color:red
+}
+p{
+    font-size:20px;
 }
