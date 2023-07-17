@@ -1,0 +1,22 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    text-align: center;
+  }
+.container{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap:50px;
+}
+#ROCK, #PAPER, #SCISSORS{
+    flex-basis: 200px;
+}
+#ROCK:hover, #PAPER:hover, #SCISSORS:hover{
+    cursor:pointer;
+}
+#RESULT{
+    color:red
+}
